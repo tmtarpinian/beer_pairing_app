@@ -20,15 +20,15 @@ class Cli
     input = gets.strip.downcase
     Api.get_beer(input)
     food = Food.find_by_name(input)
-    if food
-      print_beers_by_food(food)
-      puts " "
-      prompt
-    else
-      puts " "
-      puts "Unfortunately, we do not have a beer for that. Returning you to main menu..."
-      intro_prompt
-    end
+      if food
+        print_beers_by_food(food)
+        puts " "
+        prompt
+      else
+        puts " "
+        puts "Unfortunately, we do not have a beer for that. Returning you to main menu..."
+        intro_prompt
+      end
       
     input = gets.strip.downcase
     while input != 'exit'
@@ -46,28 +46,26 @@ class Cli
         puts " "
         input = gets.strip.downcase
         food = Food.find_by_name(input)
-        if food
-          print_beers_by_food(food)
-          prompt
-        else                
-          Api.get_beer(input)
-          food = Food.find_by_name(input)
           if food
             print_beers_by_food(food)
             prompt
-          else
-            puts "Unfortunately, we do not have a beer for that. Returning you to main menu..."
-            intro_prompt
+          else                
+            Api.get_beer(input)
+            food = Food.find_by_name(input)
+            if food
+              print_beers_by_food(food)
+              prompt
+            else
+              puts "Unfortunately, we do not have a beer for that. Returning you to main menu..."
+              intro_prompt
+            end
           end
-        end
       else
         puts " "
         puts "Cannot process this request. Please try again"
         intro_prompt
       end
-            
-            input = gets.strip.downcase
-        
+    input = gets.strip.downcase
     end       
     puts " "
     puts "Thank you for using the Food Pairing App for Beer. Goodbye!"
@@ -100,10 +98,10 @@ class Cli
     puts "If you're making a meal with the food '#{food.name}', consider pairing with the following beers:"
     puts " "
     results = Beer.find_by_food(food)
-    results.each.with_index(1) do |beer, i|
-      puts "#{i}. #{beer.name}"
-      puts " "
-    end
+      results.each.with_index(1) do |beer, i|
+        puts "#{i}. #{beer.name}"
+        puts " "
+      end
   end
 
   def print_beer(beer)

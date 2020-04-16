@@ -20,11 +20,11 @@ class Food
 
   def self.find_or_create_by_name(name)
     food = self.find_by_name(name)
-    if food
-      food
-    else
-      self.create(name) 
-    end
+      if food
+        food
+      else
+        self.create(name) 
+      end
   end
 
   def self.find_by_name(name)
