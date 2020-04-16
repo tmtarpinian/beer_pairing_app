@@ -37,5 +37,5 @@ class Beer
     def self.find_by_food(food)
         self.all.select{|beer| beer.foods.include?(food)}
     end
-  
+
 end
