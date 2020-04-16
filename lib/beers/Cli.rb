@@ -4,13 +4,17 @@ class Cli
     puts "Thank you for using the Food Pairing App for Beer"
     puts " "
     puts "Please type in a food you have, that youd like to find beers to pair with." 
+    puts " "
+    puts "If you want to use multiple words in the search use _ between words (i.e,'chocolate_cake')"
+    puts " "
+    puts "Please note that using the word 'chocolate' will find results for 'chocolate_cake', so try using single words."
+    puts " "
     puts "Can't think of a food? Type one of the following to get started:"
     puts " "
     puts "'Chicken' 'Pork' 'Lime' or 'Chocolate'"
     puts " "
     puts "Type a word below..."
-    
-    puts " "
+    puts " ""
     
     input = gets.strip.downcase
     
