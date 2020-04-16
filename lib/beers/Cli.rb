@@ -17,59 +17,62 @@ class Cli
     puts " ""
     
     input = gets.strip.downcase
-    
-    Api.get_beer(input)
-      food = Food.find_by_name(input)
-      if food
-        print_beers_by_food(food)
-        puts " "
-        prompt
-      else
-        puts " "
-        puts "Unfortunately, we do not have a beer for that. Returning you to main menu..."
-        intro_prompt
-      end
-    
+        
    
     Api.get_beer(input)
-    prompt
-      input = gets.strip.downcase
-        while input != 'exit'
-            if input.to_i > 0 && input.to_i <= Beer.find_by_food(food).length
-                beer = Beer.find_by_food(food)[input.to_i - 1]
-                print_beer(beer)
-            elsif input == "list"
+    food = Food.find_by_name(input)
+    if food
+      print_beers_by_food(food)
+      puts " "
+      prompt
+    else
+      puts " "
+      puts "Unfortunately, we do not have a beer for that. Returning you to main menu..."
+      intro_prompt
+    end
+    
+    input = gets.strip.downcase
+    while input != 'exit'
+      if input.to_i > 0 && input.to_i <= Beer.find_by_food(food).length
+        beer = Beer.find_by_food(food)[input.to_i - 1]
+        print_beer(beer)
+        puts " "
+        prompt
+      elsif input == "list"
+        print_beers_by_food(food)
+        prompt
+      elsif input == "food"
+        puts " "
+        puts "Please type a food and hit Enter/Return"
+        puts " "
+        input = gets.strip.downcase
+        food = Food.find_by_name(input)
+          if food
+            print_beers_by_food(food)
+            prompt
+          else                
+            Api.get_beer(input)
+            food = Food.find_by_name(input)
+              if food
                 print_beers_by_food(food)
-            elsif input == "food"
-                puts " "
-                puts "Please type a food and hit Enter/Return"
-                puts " "
-                input = gets.strip.downcase
-                food = Food.find_by_name(input)
-                if food
-                    print_beers_by_food(food)
-                else                
-                    Api.get_beer(input)
-                    food = Food.find_by_name(input)
-                    if food
-                        print_beers_by_food(food)
-                    else
-                        puts "Unfortunately, we do not have a beer for that. Returning you to main menu..."
-                    end
-                end
-                
-            else
-                puts " "
-                puts "Cannot process this request. Please try again"
-            end
-               prompt 
-                input = gets.strip.downcase
-            
-        end       
+                prompt
+              else
+                puts "Unfortunately, we do not have a beer for that. Returning you to main menu..."
+                intro_prompt
+              end
+          end
+      else
         puts " "
-        puts "Thank you for using the Food Pairing App for Beer. Goodbye!"
-        puts " "
+        puts "Cannot process this request. Please try again"
+        intro_prompt
+      end
+      input = gets.strip.downcase
+    end       
+    puts " "
+    puts "Thank you for using the Food Pairing App for Beer. Goodbye!"
+    puts " "
   end
+
   
   def intro_prompt
     puts " "
