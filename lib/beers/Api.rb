@@ -7,9 +7,10 @@ class Api
     #binding.pry
     beers = JSON.parse(response)
         beers.each do |b| 
-        new_beer = Beer.find_or_create_by_name(b["name"], b["description"], b["food_pairing"], b["abv"])
-       
-      end
+          new_beer = Beer.find_or_create_by_name(b["name"], b["description"], b["food_pairing"], b["abv"])
+          new_food.beers << new_beer
+          new_beer.foods << new_food
+        end
 
     end
 
