@@ -90,4 +90,17 @@ class Cli
       puts " "
       end
     end
+    
+     def print_beer(beer)
+      puts " "
+      puts "#{beer.name} has an ABV of #{beer.abv}." 
+      puts " "
+      puts "Description: #{beer.description}"
+      puts " "
+      puts "#{beer.name} pairs well with the following meals: #{beer.meals}."
+      puts " "
+      puts "Have an ingredient from one of the meals above? Try using that in your next search!"
+      puts " "
+      puts " "
+    end
 end
