@@ -1,4 +1,4 @@
-# IdeTest
+# Food Pairing for Beer App
 
 TEST TEST TEST
 
