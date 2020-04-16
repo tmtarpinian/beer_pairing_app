@@ -1,20 +1,26 @@
 # Food Pairing for Beer App
 
-TEST TEST TEST
+This program was created to help people find beers that pair with food they currently have in the house or on their grocery list.
+By choosing a food, the app will find beers that pair with that food. The beers will also provide descriptions of meals you can create from those foods, giving you not only beer ideas but dinner ideas as well.
 
-Well, here's another test line
-
-Put your Ruby code in the file `lib/ide_test`. To experiment with that code, run `bin/console` for an interactive prompt.
+With this instant knowledge on hand, you'll soon be creating remarkable beer pairings that excites your normal meal routine and impresses any guest.
 
 ## Usage
 
-TODO: Write usage instructions here
+To use the Food Pairing for Beer App, download a zipped file from Github.
+Please have ruby installed prior to running this application.
 
-## Development
+After unzipping and saving the contents to the desired directory, from within that directory, run 'ruby ./bin/bear_pairing' for an interactive prompt.
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+The program will run and prompt user input thereafter.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+The close the program, type the word 'exit'
+
+## Acknowledgement
+
+I would like to thank PunkAPI.com for allowing public access to their API and for the extensive information they provide.
+Please check out their API at https://punkapi.com/.
+
 
 ## Contributing
 
