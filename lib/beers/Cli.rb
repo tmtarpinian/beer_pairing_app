@@ -14,6 +14,18 @@ class Cli
     
     input = gets.strip.downcase
     
+    Api.get_beer(input)
+      food = Food.find_by_name(input)
+      if food
+        print_beers_by_food(food)
+        puts " "
+        prompt
+      else
+        puts " "
+        puts "Unfortunately, we do not have a beer for that. Returning you to main menu..."
+        intro_prompt
+      end
+    
    
     Api.get_beer(input)
     prompt
