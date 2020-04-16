@@ -17,4 +17,17 @@ class Cli
    
     Api.get_beer(input)
   end
+  
+  
+    def prompt
+        puts " "
+        puts "Type a number and hit Enter/Return to see a Beer's details, including meal ideas."
+        puts " "
+        puts "Type the word 'list' and hit Enter/Return to see your most recent search results again."
+        puts " "
+        puts "Type the word 'food' and hit Enter/Return to search by a different food"
+        puts " "
+        puts "Type the word 'exit' and hit Enter/Return to leave the app."
+        puts " "
+    end
 end
