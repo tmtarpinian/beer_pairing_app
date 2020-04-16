@@ -71,40 +71,47 @@ class Cli
         puts " "
   end
   
+  def intro_prompt
+    puts " "
+    puts "Type the word 'food' and hit Enter/Return to search by a different food"
+    puts " "
+    puts "Type the word 'exit' and hit Enter/Return to leave the app."
+    puts " "
+  end
   
-    def prompt
-      puts " "
-      puts "Type a number and hit Enter/Return to see a Beer's details, including meal ideas."
-      puts " "
-      puts "Type the word 'list' and hit Enter/Return to see your most recent search results again."
-      puts " "
-      puts "Type the word 'food' and hit Enter/Return to search by a different food"
-      puts " "
-      puts "Type the word 'exit' and hit Enter/Return to leave the app."
-      puts " "
-    end
+  def prompt
+    puts " "
+    puts "Type a number and hit Enter/Return to see a Beer's details, including meal ideas."
+    puts " "
+    puts "Type the word 'list' and hit Enter/Return to see your most recent search results again."
+    puts " "
+    puts "Type the word 'food' and hit Enter/Return to search by a different food"
+    puts " "
+    puts "Type the word 'exit' and hit Enter/Return to leave the app."
+    puts " "
+  end
     
-    def print_beers_by_food(food)
-      puts " "
-      puts "If you're making a meal with the food '#{food.name}', consider pairing with the following beers:"
-      puts " "
-      results = Beer.find_by_food(food)
-      results.each.with_index(1) do |beer, i|
+  def print_beers_by_food(food)
+    puts " "
+    puts "If you're making a meal with the food '#{food.name}', consider pairing with the following beers:"
+    puts " "
+    results = Beer.find_by_food(food)
+    results.each.with_index(1) do |beer, i|
       puts "#{i}. #{beer.name}"
       puts " "
-      end
     end
+  end
     
-     def print_beer(beer)
-      puts " "
-      puts "#{beer.name} has an ABV of #{beer.abv}." 
-      puts " "
-      puts "Description: #{beer.description}"
-      puts " "
-      puts "#{beer.name} pairs well with the following meals: #{beer.meals}."
-      puts " "
-      puts "Have an ingredient from one of the meals above? Try using that in your next search!"
-      puts " "
-      puts " "
-    end
+  def print_beer(beer)
+    puts " "
+    puts "#{beer.name} has an ABV of #{beer.abv}." 
+    puts " "
+    puts "Description: #{beer.description}"
+    puts " "
+    puts "#{beer.name} pairs well with the following meals: #{beer.meals}."
+    puts " "
+    puts "Have an ingredient from one of the meals above? Try using that in your next search!"
+    puts " "
+    puts " "
+  end
 end
