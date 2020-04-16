@@ -73,7 +73,6 @@ class Cli
     puts " "
   end
 
-  
   def intro_prompt
     puts " "
     puts "Type the word 'food' and hit Enter/Return to search by a different food"
