@@ -7,6 +7,22 @@ With this instant knowledge on hand, you'll soon be creating remarkable beer pai
 
 ## Usage
 
+This program is written with Ruby and requires Ruby to be installed on the operating system executing the program.
+
+Please see https://www.ruby-lang.org/en/documentation/installation/ for Ruby installation instructions.
+
+Additionally, this program utilizes the following Modules:
+
+1. open-uri
+Documentation: https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/OpenURI.html
+2. net/http
+Documentation: https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html
+3. json
+Documentation: https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html
+
+By installing ruby, these modules should be accessible.
+
+
 To use the Beer-Pairing App for Food, download a zipped file from Github (https://github.com/ferrisbueller66/beer_pairing_app).
 Please have ruby installed prior to running this application.
 
@@ -19,6 +35,7 @@ The close the program, type the word 'exit'
 ## Acknowledgement
 
 I would like to thank PunkAPI.com for allowing public access to their API and for the extensive information they provide.
+
 Please check out their API at https://punkapi.com/.
 
 
