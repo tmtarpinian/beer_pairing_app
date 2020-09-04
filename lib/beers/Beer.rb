@@ -27,11 +27,7 @@ class Beer
 
   def self.find_or_create_by_name(name, description, meals, abv)
     beer = self.find_by_name(name)
-      if beer
-          beer
-      else
-          self.create(name, description, meals, abv) 
-      end
+      beer ? beer : self.create(name, description, meals, abv)
   end
 
   def self.find_by_food(food)

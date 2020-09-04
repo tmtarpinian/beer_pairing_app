@@ -2,20 +2,21 @@ class Cli
   
   def run
     puts " "
-    puts "Thank you for using the Food Pairing App for Beer"
+    puts "Thank you for using the Food Pairing App for Beer".light_yellow
     puts " "
-    puts "Please type in a food you have, that youd like to find beers to pair with." 
+    puts "Please type in a food you have, that youd like to find beers to pair with.".light_green 
     puts " "
-    puts "If you want to use multiple words in the search use _ between words (i.e,'chocolate_cake')"
+    puts "If you want to use multiple words in the search use _ between words (i.e,'chocolate_cake')".light_yellow
     puts " "
-    puts "Please note that using the word 'chocolate' will find results for 'chocolate_cake', so try using single words."
+    puts "Please note that using the word 'chocolate' will find results for 'chocolate_cake', so try using single words.".light_yellow
     puts " "
-    puts "Can't think of a food? Type one of the following to get started:"
+    puts "Can't think of a food? Type one of the following to get started:".light_blue
     puts " "
-    puts "'Chicken' 'Pork' 'Lime' or 'Chocolate'"
+    puts "'Chicken' 'Pork' 'Lime' or 'Chocolate'".light_blue
     puts " "
-    puts "Type a word below..."
+    puts "Type a word below...".light_green
     puts " "
+    
       
     input = gets.strip.downcase
     Api.get_beer(input)
@@ -26,7 +27,7 @@ class Cli
         prompt
       else
         puts " "
-        puts "Unfortunately, we do not have a beer for that. Returning you to main menu..."
+        puts "Unfortunately, we do not have a beer for that. Returning you to main menu...".light_red
         intro_prompt
       end
       
@@ -42,7 +43,7 @@ class Cli
         prompt
       elsif input == "food"
         puts " "
-        puts "Please type a food and hit Enter/Return"
+        puts "Please type a food and hit Enter/Return".light_green
         puts " "
         input = gets.strip.downcase
         food = Food.find_by_name(input)
@@ -56,61 +57,61 @@ class Cli
               print_beers_by_food(food)
               prompt
             else
-              puts "Unfortunately, we do not have a beer for that. Returning you to main menu..."
+              puts "Unfortunately, we do not have a beer for that. Returning you to main menu...".light_red
               intro_prompt
             end
           end
       else
         puts " "
-        puts "Cannot process this request. Please try again"
+        puts "Cannot process this request. Please try again".light_red
         intro_prompt
       end
     input = gets.strip.downcase
     end       
     puts " "
-    puts "Thank you for using the Food Pairing App for Beer. Goodbye!"
+    puts "Thank you for using the Food Pairing App for Beer. Goodbye!".light_yellow
     puts " "
   end
 
 
   def intro_prompt
     puts " "
-    puts "Type the word 'food' and hit Enter/Return to search by a different food"
+    puts "Type the word 'food' and hit Enter/Return to search by a different food".light_green
     puts " "
-    puts "Type the word 'exit' and hit Enter/Return to leave the app."
+    puts "Type the word" + "'exit'".light_red + "and hit Enter/Return to leave the app.".light_red
     puts " "
   end
 
   def prompt
     puts " "
-    puts "Type a number and hit Enter/Return to see a Beer's details, including meal ideas."
+    puts "Type a number and hit Enter/Return to see a Beer's details, including meal ideas.".light_green
     puts " "
-    puts "Type the word 'list' and hit Enter/Return to see your most recent search results again."
+    puts "Type the word 'list' and hit Enter/Return to see your most recent search results again.".light_green
     puts " "
-    puts "Type the word 'food' and hit Enter/Return to search by a different food"
+    puts "Type the word 'food' and hit Enter/Return to search by a different food".light_green
     puts " "
-    puts "Type the word 'exit' and hit Enter/Return to leave the app."
+    puts "Type the word ".light_green + "'exit'".light_red + "and hit ".light_green + "Enter/Return ".light_red + "to leave the app.".light_green
     puts " "
   end
   
   def print_beers_by_food(food)
     puts " "
-    puts "If you're making a meal with the food '#{food.name}', consider pairing with the following beers:"
+    puts "If you're making a meal with the food '#{food.name}', consider pairing with the following beers:".light_yellow
     puts " "
     results = Beer.find_by_food(food)
       results.each.with_index(1) do |beer, i|
-        puts "#{i}. #{beer.name}"
+        puts "#{i}. #{beer.name}".light_blue
         puts " "
       end
   end
 
   def print_beer(beer)
     puts " "
-    puts "#{beer.name} has an ABV of #{beer.abv}." 
+    puts "#{beer.name} has an ABV of ".light_blue +  "#{beer.abv}.".light_red
     puts " "
-    puts "Description: #{beer.description}"
+    puts "Description: ".light_blue + "#{beer.description}".light_yellow
     puts " "
-    puts "#{beer.name} pairs well with the following meals: #{beer.meals}."
+    puts "#{beer.name} pairs well with the following meals: ".light_blue + "#{beer.meals}.".light_yellow
     puts " "
     puts "Have an ingredient from one of the meals above? Try using that in your next search!"
     puts " "

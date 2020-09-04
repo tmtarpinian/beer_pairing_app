@@ -5,7 +5,7 @@ By choosing a food, the app will find beers that pair with that food. The beers 
 
 With this instant knowledge on hand, you'll soon be creating remarkable beer pairings that excites your normal meal routine and impresses any guest.
 
-## Usage
+## Installation
 
 This program is written with Ruby and requires Ruby to be installed on the operating system executing the program.
 
@@ -22,11 +22,20 @@ Documentation: https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html
 
 By installing ruby, these modules should be accessible.
 
+Finally, this program uses the "colorize" gem.
+This will need to be installed prior to running the program, since it is required in the environmnent.rb file.
+
+To install, in your terminal, run 'gem install colorize'
+'Colorize" Documentation: https://github.com/fazibear/colorize
+
+## Usage
+
 
 To use the Beer-Pairing App for Food, download a zipped file from Github (https://github.com/ferrisbueller66/beer_pairing_app).
-Please have ruby installed prior to running this application.
 
-After unzipping and saving the contents to the desired directory, from within that directory, run 'ruby ./bin/bear_pairing' for an interactive prompt.
+Please have ruby and the 'colorize' gem installed prior to running this application (see Installation above)
+
+After unzipping and saving the contents to the desired directory, from within that directory, run 'ruby ./bin/beer_pairing' for an interactive prompt.
 
 The program will run and prompt user input thereafter.
 

@@ -2,6 +2,8 @@ require 'pry'
 require 'open-uri'
 require 'net/http'
 require 'json'
+require 'colorize'
+require 'colorized_string'
 
 require_relative './beers/Cli'
 require_relative './beers/Api'
