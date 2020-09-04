@@ -9,5 +9,4 @@ require_relative './beers/Cli'
 require_relative './beers/Api'
 require_relative './beers/Beer'
 require_relative './beers/Food'
-
-
+require_relative './beers/Prompt'
