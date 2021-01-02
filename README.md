@@ -5,6 +5,25 @@ By choosing a food, the app will find beers that pair with that food. The beers 
 
 With this instant knowledge on hand, you'll soon be creating remarkable beer pairings that excites your normal meal routine and impresses any guest.
 
+![stars badge](https://img.shields.io/github/stars/tmtarpinian/beer_pairing_app)
+![issues badge](https://img.shields.io/github/issues/tmtarpinian/beer_pairing_app)
+[![Coverage](badge.svg)](https://github.com/tmtarpinian/Catan_stats)
+![license badge](https://img.shields.io/github/license/tmtarpinian/beer_pairing_app)
+
+
+### Table of Contents
+
+
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Acknowledgement](#Acknowledgement)
+- [Contributing](#Contributing)
+- [Code of Conduct](#Conduct)
+- [Maintainers](#Maintainer(s))
+- [License](#license)
+
+---
+
 ## Installation
 
 This program is written with Ruby and requires Ruby to be installed on the operating system executing the program.
@@ -56,6 +75,13 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/ferris
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-## Code of Conduct
+## Maintainer(s)
+---
+
+| ![tmtarpinian](./tmtarpinian.jpg)     |
+| :------------- | 
+|[@tmtarpinian](https://github.com/tmtarpinian) |
+
+## Conduct
 
 Everyone interacting in the IdeTest project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/ferrisbueller66/beer_pairing_app/blob/master/CODE_OF_CONDUCT.md).
