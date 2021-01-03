@@ -16,7 +16,7 @@ With this instant knowledge on hand, you'll soon be creating remarkable beer pai
 
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Acknowledgement](#Acknowledgement)
+- [Acknowledgements](#Acknowledgements)
 - [Contributing](#Contributing)
 - [Code of Conduct](#Conduct)
 - [Maintainers](#Maintainer(s))
@@ -44,27 +44,27 @@ By installing ruby, these modules should be accessible.
 Finally, this program uses the "colorize" gem.
 This will need to be installed prior to running the program, since it is required in the environmnent.rb file.
 
-To install, in your terminal, run 'gem install colorize'
-'Colorize" Documentation: https://github.com/fazibear/colorize
+To install, in your terminal, run `gem install colorize`.
+[Find the Colorize documentation here](https://github.com/fazibear/colorize)
 
 ## Usage
 
 
-To use the Beer-Pairing App for Food, download a zipped file from Github (https://github.com/ferrisbueller66/beer_pairing_app).
+To use the Beer-Pairing App for Food, [download a zipped file from Github](https://github.com/tmtarpinian/beer_pairing_app).
 
 Please have ruby and the 'colorize' gem installed prior to running this application (see Installation above)
 
-After unzipping and saving the contents to the desired directory, from within that directory, run 'ruby ./bin/beer_pairing' for an interactive prompt.
+After unzipping and saving the contents to the desired directory, from within that directory, run `ruby ./bin/beer_pairing` for an interactive prompt.
 
 The program will run and prompt user input thereafter.
 
-The close the program, type the word 'exit'
+The close the program, type the word `exit`
 
-## Acknowledgement
+## Acknowledgements
 
 I would like to thank PunkAPI.com for allowing public access to their API and for the extensive information they provide.
 
-Please check out their API at https://punkapi.com/.
+[Please check out their API](https://punkapi.com/).
 
 
 ## Contributing
