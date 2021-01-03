@@ -5,7 +5,7 @@ By choosing a food, the app will find beers that pair with that food. The beers 
 
 With this instant knowledge on hand, you'll soon be creating remarkable beer pairings that excites your normal meal routine and impresses any guest.
 
-![stars badge](https://img.shields.io/github/stars/tmtarpinian/beer_pairing_app)
+![Build Status](https://github.com/tmtarpinian/beer_pairing_app/workflows/Master/badge.svg)
 ![issues badge](https://img.shields.io/github/issues/tmtarpinian/beer_pairing_app)
 [![Coverage](badge.svg)](https://github.com/tmtarpinian/Catan_stats)
 ![license badge](https://img.shields.io/github/license/tmtarpinian/beer_pairing_app)
