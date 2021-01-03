@@ -32,12 +32,9 @@ Please see https://www.ruby-lang.org/en/documentation/installation/ for Ruby ins
 
 Additionally, this program utilizes the following Modules:
 
-1. open-uri
-Documentation: https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/OpenURI.html
-2. net/http
-Documentation: https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html
-3. json
-Documentation: https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html
+1. [open-uri Documentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/OpenURI.html)
+2. [net/http Documentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+3. [json Documentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html)
 
 By installing ruby, these modules should be accessible.
 
