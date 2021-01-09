@@ -10,7 +10,6 @@ class Beer
     @meals = meals.join(", ")
     @abv = abv
     @foods = []
-    @@all << self
   end
 
   def self.all
