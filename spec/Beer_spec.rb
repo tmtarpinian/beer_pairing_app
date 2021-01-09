@@ -44,11 +44,18 @@ describe "Beer" do
     end
   end
 
-
   describe ".create" do
     it "successfully instantiates and saves a new Beer instance" do
       created_beer = Beer.create("Labatt Blue", "Canadian Pilsner", ["Hockey"], "5.0%")
       expect(Beer.all).to include(created_beer) 
+    end
+  end
+
+  describe ".save" do
+    it "successfully saves a new Beer instance" do
+      new_beer = Beer.new("Labatt Blue", "Canadian Pilsner", ["Hockey"], "5.0%")
+      new_beer.save
+      expect(Beer.all).to include(new_beer) 
     end
   end
 end
