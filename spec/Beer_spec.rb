@@ -13,5 +13,11 @@ describe "Beer" do
     end
   end
 
+  describe "#name" do
+    it "can call the name of a beer" do
+      expect(beer_2.name).to eq("Tank 7")
+    end
+  end
+
 
 end
