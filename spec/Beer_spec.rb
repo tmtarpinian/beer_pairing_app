@@ -1,15 +1,17 @@
 require "spec_helper"
 
 describe "Beer" do
-  let(:song) { Song.new("In the Aeroplane Over the Sea") }
-
+  let(:beer_1) {Beer.new("Norm's Raggedy Ass IPA", "Our flagship - 2010 World Beer Cup gold medal award - brewed and hopped with American, Centennial, Cascades, Columbus and Simcoe hops", ["Buffalo Wings", "Pad Thai"], "7.2%") }
+  let(:beer_2) {Beer.new("Tank 7", "Fruity Aromatics, citrusy balance, dry and hoppy perfection", ["Raspberry Tort", "Chile Lime Quesadillas"], "8.5%")}
+  
   describe "#initialize" do
-    it "accepts a name, description, array of meals, and abv for the new beer" do
-      new_beer = Beer.new("Tank 7", "Fruity Aromatics, citrusy balance, dry and hoppy perfection", ["Raspberry Tort", "Chile Lime Quesadillas"], "8.5%")
-
-      new_beer_name = new_beer.instance_variable_get(:@name)
-
+    it "new beer objects can call their attributes" do
+      #new_beer = Beer.new("Tank 7", "Fruity Aromatics, citrusy balance, dry and hoppy perfection", ["Raspberry Tort", "Chile Lime Quesadillas"], "8.5%")
+      new_beer_name = beer_2.instance_variable_get(:@name)
       expect(new_beer_name).to eq("Tank 7")
+      expect(beer_1.abv).to eq("7.2%")
     end
   end
+
+
 end
