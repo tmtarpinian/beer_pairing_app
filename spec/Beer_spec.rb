@@ -19,5 +19,28 @@ describe "Beer" do
     end
   end
 
+  describe "#description" do
+    it "can call the description of a beer" do
+      expect(beer_1.description).to eq("Our flagship - 2010 World Beer Cup gold medal award - brewed and hopped with American, Centennial, Cascades, Columbus and Simcoe hops")
+    end
+  end
 
+  describe "#abv" do
+    it "can call the abv of a beer" do
+      expect(beer_2.abv).to eq("8.5%")
+    end
+  end
+
+  describe "#meals" do
+    it "can call the meals of a beer" do
+      expect(beer_1.meals).to eq("Buffalo Wings, Pad Thai")
+    end
+  end
+
+  describe ".all" do
+    
+    it "saves all beer instances in memory as an array" do
+      expect(Beer.all).to include(beer_2)
+    end
+  end
 end
