@@ -18,6 +18,12 @@ class Beer
 
   def self.create(name, description, meals, abv)
     beer = self.new(name, description, meals, abv)
+    beer.save
+    beer
+  end
+
+  def save
+    @@all << self
   end
 
   def self.find_by_name(name)
