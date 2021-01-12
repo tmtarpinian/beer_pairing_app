@@ -6,6 +6,7 @@ RSpec.describe Beer, type: :model do
     beer_2 = Beer.create("Tank 7", "Fruity Aromatics, citrusy balance, dry and hoppy perfection", ["Raspberry Tort", "Chile Lime Quesadillas"], "8.5%")
   
   context "instance methods" do
+    
     describe "#initialize" do
       before(:each) do            
         Beer.delete_all
@@ -58,6 +59,7 @@ RSpec.describe Beer, type: :model do
   end
 
   context "class methods" do
+
     describe ".all" do
       before(:each) do            
         Beer.delete_all
