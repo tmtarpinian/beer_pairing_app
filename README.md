@@ -7,7 +7,7 @@ With this instant knowledge on hand, you'll soon be creating remarkable beer pai
 
 ![Build Status](https://github.com/tmtarpinian/beer_pairing_app/workflows/Master/badge.svg)
 ![issues badge](https://img.shields.io/github/issues/tmtarpinian/beer_pairing_app)
-[![Coverage](badge.svg)](./assets/badge.svg)
+[![Coverage](./assets/badge.svg)](https://github.com/tmtarpinian/beer_pairing_app)
 ![license badge](https://img.shields.io/github/license/tmtarpinian/beer_pairing_app)
 
 
