@@ -39,4 +39,8 @@ class Beer
     self.all.select{|beer| beer.foods.include?(food)}
   end
 
+  def self.delete_all
+    @@all = []
+  end
+
 end
