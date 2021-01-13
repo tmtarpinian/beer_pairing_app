@@ -36,7 +36,7 @@ class Beer
   end
 
   def self.find_by_food(food)
-    self.all.select{|beer| beer.foods.include?(food)}
+    self.all.filter_map{|beer| beer if beer.foods.include?(food)}
   end
 
   def self.delete_all

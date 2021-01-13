@@ -89,15 +89,30 @@ RSpec.describe Beer, type: :model do
 
     describe ".find_or_create_by_name" do
       it "finds an existing Beer instance " do
-        name = "Tank 7"
-        found_beer = Beer.find_by_name(name)
+        Beer.delete_all
+        beer_1 = Beer.create("Norm's Raggedy Ass IPA", "Our flagship - 2010 World Beer Cup gold medal award - brewed and hopped with American, Centennial, Cascades, Columbus and Simcoe hops", ["Buffalo Wings", "Pad Thai"], "7.2%") 
+        beer_2 = Beer.create("Tank 7", "Fruity Aromatics, citrusy balance, dry and hoppy perfection", ["Raspberry Tort", "Chile Lime Quesadillas"], "8.5%")
+    
+        found_beer = Beer.find_or_create_by_name("Tank 7", "Fruity Aromatics, citrusy balance, dry and hoppy perfection", ["Raspberry Tort", "Chile Lime Quesadillas"], "8.5%")
+        expect(Beer.all.length).to eq(2)
         expect(found_beer).to be(beer_2) 
       end
-      it "creates a new beer instance if no beer is found by name" do
-        beer_3 = Beer.create("Boston Lager", "A Distinctive Balance of Spicy Hops, Slightly Sweet Roasted Malts, And a Smooth Finish", ["Burgers", "Roasted Chicken", "Fried Chicken", "Burritos"], "5.0%")
-        name = "Boston Lager"
-        found_beer = Beer.find_by_name(name)
-        expect(found_beer).to be(beer_3) 
+    end
+
+    describe ".find_by_food" do
+      it "finds all existing Beer instances by food " do
+        Beer.delete_all
+        food_1 = Food.create("Lime")
+        beer_1 = Beer.create("Norm's Raggedy Ass IPA", "Our flagship - 2010 World Beer Cup gold medal award - brewed and hopped with American, Centennial, Cascades, Columbus and Simcoe hops", ["Buffalo Wings", "Pad Thai"], "7.2%") 
+        beer_2 = Beer.create("Tank 7", "Fruity Aromatics, citrusy balance, dry and hoppy perfection", ["Raspberry Tort", "Chile Lime Quesadillas"], "8.5%")
+        beer_3  = Beer.create("Labatt Blue", "Canadian Pilsner", ["Hockey", "Chile Lime Quesadillas"], "5.0%")
+        beer_2.foods << food_1
+        beer_3.foods << food_1
+        food_1.beers << [beer_2, beer_3]
+
+        found_beers = Beer.find_by_food(food_1)
+        expect(found_beers.length).to eq(2)
+        expect(found_beers).to include(beer_2) 
       end
     end
 
