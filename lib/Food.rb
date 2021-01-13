@@ -7,7 +7,11 @@ class Food
   def initialize(name)
     @name = name
     @beers = []
+  end
+
+  def save
     @@all << self
+    self
   end
 
   def self.all
@@ -16,6 +20,7 @@ class Food
 
   def self.create(food)
     food = self.new(food)
+    food.save
   end
 
   def self.find_or_create_by_name(name)
@@ -25,6 +30,10 @@ class Food
 
   def self.find_by_name(name)
     self.all.find{|i| i.name == name}
+  end
+
+  def self.delete_all
+    @@all = []
   end
 
 end

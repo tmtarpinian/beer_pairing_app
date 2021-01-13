@@ -11,7 +11,7 @@ RSpec.describe Beer, type: :model do
       before(:each) do            
         Beer.delete_all
       end
-      it "new beer objects can call their attributes" do
+      it "can initialize a new Beer instance" do
         #new_beer = Beer.new("Tank 7", "Fruity Aromatics, citrusy balance, dry and hoppy perfection", ["Raspberry Tort", "Chile Lime Quesadillas"], "8.5%")
         new_beer_name = beer_2.instance_variable_get(:@name)
         expect(new_beer_name).to eq("Tank 7")
