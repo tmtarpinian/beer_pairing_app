@@ -32,6 +32,16 @@ RSpec.describe Food, type: :model do
 				expect(new_food.beers.flatten.last.name).to eq("Tank 7")
 			end
 		end
+
+		describe "#save" do
+			it "can save an instance of a food in the @@all array" do
+				new_food = Food.new("Raspberry")
+				new_food_2 = Food.new("Lime")
+				new_food_2.save
+				expect(Food.all.last).to eq(new_food_2)
+			end
+		end
+
 	end
 
 	context "class methods" do
@@ -46,5 +56,6 @@ RSpec.describe Food, type: :model do
 				expect(Food.all).to include(food_2)
       end
 		end
+		
 	end
 end
