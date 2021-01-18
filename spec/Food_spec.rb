@@ -73,5 +73,16 @@ RSpec.describe Food, type: :model do
 			expect(found_food).to be(food_2) 
 			end
 		end
+
+		describe ".delete_all" do
+			it "deletes food instances from @@all array" do
+				Food.delete_all
+				food_1 = Food.create("Raspberry")
+				food_2 = Food.create("Lime")
+				expect(Food.all.length).to eq(2) 
+			  	Food.delete_all
+			  	expect(Food.all).to match_array([]) 
+			end
+		end
 	end
 end
