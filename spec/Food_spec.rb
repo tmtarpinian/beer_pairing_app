@@ -46,16 +46,32 @@ RSpec.describe Food, type: :model do
 
 	context "class methods" do
 
-    describe ".all" do
-                 
-      it "contains all food instances in memory as an array" do
-				Food.delete_all
-        food_1 = Food.create("Raspberry")
-        food_2 = Food.create("Lime")
-    
-				expect(Food.all).to include(food_2)
-      end
+		describe ".all" do
+					
+		it "contains all food instances in memory as an array" do
+			Food.delete_all
+			food_1 = Food.create("Raspberry")
+			food_2 = Food.create("Lime")
+			expect(Food.all).to include(food_2)
+		end
+			end
+
+			describe ".create" do
+		it "successfully instantiates and saves a new Food instance" do
+			created_food = Food.create("Lime")
+			expect(Food.all).to include(created_food)
+		end
 		end
 		
+		describe ".find_by_name" do
+			it "finds a Food instance by a given name" do
+			Food.delete_all
+			food_1 = Food.create("Raspberry")
+			food_2 = Food.create("Lime")
+			name = "Lime"
+			found_food = Food.find_by_name(name)
+			expect(found_food).to be(food_2) 
+			end
+		end
 	end
 end
