@@ -1,6 +1,10 @@
 require "spec_helper"
 
 RSpec.describe Food, type: :model do
+	let!(:food_one) {Food.create("Raspberry")}
+	let!(:food_two) {Food.create("Lime")}
+	let!(:beer_one) {Beer.create("Norm's Raggedy Ass IPA", "Our flagship - 2010 World Beer Cup gold medal award - brewed and hopped with American, Centennial, Cascades, Columbus and Simcoe hops", ["Buffalo Wings", "Pad Thai"], "7.2%") }
+	let!(:beer_two) {Beer.create("Tank 7", "Fruity Aromatics, citrusy balance, dry and hoppy perfection", ["Raspberry Tort", "Chile Lime Quesadillas"], "8.5%")}
   
   context "instance methods" do
     
@@ -19,11 +23,8 @@ RSpec.describe Food, type: :model do
 
     describe "#beers" do
 			new_food = Food.new("Raspberry")
-			beer_1 = Beer.create("Norm's Raggedy Ass IPA", "Our flagship - 2010 World Beer Cup gold medal award - brewed and hopped with American, Centennial, Cascades, Columbus and Simcoe hops", ["Buffalo Wings", "Pad Thai"], "7.2%") 
-			beer_2 = Beer.create("Tank 7", "Fruity Aromatics, citrusy balance, dry and hoppy perfection", ["Raspberry Tort", "Chile Lime Quesadillas"], "8.5%")
-	
 			it "can set beers for a food" do
-				new_food.beers << [beer_1, beer_2]
+				new_food.beers << [beer_one, beer_two]
 				expect(new_food.beers.flatten.length).to eq(2)
 				
 			end
@@ -45,64 +46,51 @@ RSpec.describe Food, type: :model do
 	end
 
 	context "class methods" do
-
-		describe ".all" do
-					
-		it "contains all food instances in memory as an array" do
+		
+		after(:each) do
 			Food.delete_all
-			food_1 = Food.create("Raspberry")
-			food_2 = Food.create("Lime")
-			expect(Food.all).to include(food_2)
 		end
-			end
 
-			describe ".create" do
-		it "successfully instantiates and saves a new Food instance" do
-			created_food = Food.create("Lime")
-			expect(Food.all).to include(created_food)
+		describe ".all" do			
+			it "contains all food instances in memory as an array" do
+				expect(Food.all).to include(food_two)
+			end
 		end
+
+		describe ".create" do
+			it "successfully instantiates and saves a new Food instance" do
+				created_food = Food.create("Salsa")
+				expect(Food.all).to include(created_food)
+			end
 		end
 		
 		describe ".find_by_name" do
 			it "finds a Food instance by a given name" do
-			Food.delete_all
-			food_1 = Food.create("Raspberry")
-			food_2 = Food.create("Lime")
-			name = "Lime"
-			found_food = Food.find_by_name(name)
-			expect(found_food).to be(food_2) 
+				name = "Lime"
+				found_food = Food.find_by_name(name)
+				expect(found_food).to be(food_two)
 			end
 		end
 
 		describe ".find_or_create_by_name" do
 			
-			
 			it "finds, does not recreate, an existing Food instance by a given name" do
-			Food.delete_all
-			food_1 = Food.create("Raspberry")
-			food_2 = Food.create("Lime")
-			name = "Lime"
-			found_food = Food.find_or_create_by_name(name)
-			expect(found_food).to be(food_2) 
-			expect(Food.all.length).to be(2) 
+				name = "Lime"
+				found_food = Food.find_or_create_by_name(name)
+				expect(found_food).to be(food_two) 
+				expect(Food.all.length).to be(2)
 			end
 
 			it "creates a new Food instance if one is not found by name" do
-				Food.delete_all
-				food_1 = Food.create("Raspberry")
-				food_2 = Food.create("Lime")
 				name = "Chocolate"
 				new_food = Food.find_or_create_by_name(name)
 				expect(new_food).to be(Food.all.last) 
-				expect(Food.all.length).to be(3) 
-				end
+				expect(Food.all.length).to be(3)
+			end
 		end
 
 		describe ".delete_all" do
 			it "deletes food instances from @@all array" do
-				Food.delete_all
-				food_1 = Food.create("Raspberry")
-				food_2 = Food.create("Lime")
 				expect(Food.all.length).to eq(2) 
 			  	Food.delete_all
 			  	expect(Food.all).to match_array([]) 
