@@ -81,4 +81,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Conduct
 
-Everyone interacting in the IdeTest project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/ferrisbueller66/beer_pairing_app/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Beer-Pairing App’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/tmtarpinian/beer_pairing_app/blob/master/CODE_OF_CONDUCT.md).

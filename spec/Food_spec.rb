@@ -74,6 +74,30 @@ RSpec.describe Food, type: :model do
 			end
 		end
 
+		describe ".find_or_create_by_name" do
+			
+			
+			it "finds, does not recreate, an existing Food instance by a given name" do
+			Food.delete_all
+			food_1 = Food.create("Raspberry")
+			food_2 = Food.create("Lime")
+			name = "Lime"
+			found_food = Food.find_or_create_by_name(name)
+			expect(found_food).to be(food_2) 
+			expect(Food.all.length).to be(2) 
+			end
+
+			it "creates a new Food instance if one is not found by name" do
+				Food.delete_all
+				food_1 = Food.create("Raspberry")
+				food_2 = Food.create("Lime")
+				name = "Chocolate"
+				new_food = Food.find_or_create_by_name(name)
+				expect(new_food).to be(Food.all.last) 
+				expect(Food.all.length).to be(3) 
+				end
+		end
+
 		describe ".delete_all" do
 			it "deletes food instances from @@all array" do
 				Food.delete_all
